@@ -14,16 +14,29 @@ class Background extends Component {
           ...this.props.style
         }} />
     }
-    return(
-      <img alt=""
-        src={this.props.src}
-        style=
+    const srcs = this.props.src.map((src, i) => {
+      return (
+        <img alt="" key={i}
+          src={src}
+          style=
           {{
             width: "100%",
-            ...this.props.style
+            gridRow: "1/2",
+            gridColumn: "1/2",
           }}
-      />
-    )
+        />
+      )
+    })
+    return (
+      <div style=
+        {{
+          display: "grid",
+          gridTemplateRows: "1fr",
+          gridTemplateColumns: "1fr",
+          ...this.props.style
+        }}>{srcs}
+      </div>
+  );
   }
 }
 

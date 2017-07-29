@@ -7,8 +7,8 @@ class PlayArea extends Component {
   constructor(props){
     super(props)
     this.state = {
-      playerCoord: {current: {x: 7, y: 7}, tail: {x: 8, y: 7}},
-      cameraCoord: {x: 3, y: 3}, // top left most box
+      playerCoord: {current: {x: 2, y: 11}, tail: {x: 2, y: 12}, facing: {x: 0, y: -1}},
+      cameraCoord: {x: 0, y: 8}, // top left most box
       currentMap: null, // will hold from level json
     }
     this.mapRefsCameraSpace = Array(9).fill(Array(16).fill(null));
@@ -21,74 +21,86 @@ class PlayArea extends Component {
     const { cameraCoord } = this.state;
     const playerCoordFromCamera = {x: x - cameraCoord.x, y: y - cameraCoord.y};
 
-    let transformationFunction;
+    let movementTransform;
     // On move => check barrier => move player & camera
     switch(e.keyCode){
+      case 13: // enter
+      case 32: // space
+      case 90: // z
+
+        break;
       case 37: // Left
       case 65:
-        if(x - 1 < 0) break;
-        transformationFunction = (x, y) => {
-          return {x: x - 1, y: y}
-        }
-        if(playerCoordFromCamera.x === 3 && cameraCoord.x > 0){
-          this._handleMovement(transformationFunction, true)
+        movementTransform = {x: -1, y: 0}
+        if(x - 1 < 0){
+          this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        this._handleMovement(transformationFunction, false)
+        if(playerCoordFromCamera.x === 3 && cameraCoord.x > 0){
+          this._handleMovement(movementTransform, true)
+          break;
+        }
+        this._handleMovement(movementTransform, false)
         break;
       case 39: // Right
       case 68:
-        if(x + 1 > level[y].length - 1) break;
-        transformationFunction = (x, y) => {
-          return {x: x + 1, y: y}
-        }
-        if(playerCoordFromCamera.x === 12 && cameraCoord.x + 15 < level[y].length - 1){
-          this._handleMovement(transformationFunction, true)
+        movementTransform = {x: 1, y: 0}
+        if(x + 1 > level[y].length - 1){
+          this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        this._handleMovement(transformationFunction, false)
+        if(playerCoordFromCamera.x === 12 && cameraCoord.x + 15 < level[y].length - 1){
+          this._handleMovement(movementTransform, true)
+          break;
+        }
+        this._handleMovement(movementTransform, false)
         break;
       case 38: // Up
       case 87:
-        if(y - 1 < 0) break;
-        transformationFunction = (x, y) => {
-          return {x: x, y: y - 1}
-        }
-        if(playerCoordFromCamera.y === 2 && cameraCoord.y > 0){
-          this._handleMovement(transformationFunction, true)
+        movementTransform = {x: 0, y: -1}
+        if(y - 1 < 0){
+          this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        this._handleMovement(transformationFunction, false)
+        if(playerCoordFromCamera.y === 2 && cameraCoord.y > 0){
+          this._handleMovement(movementTransform, true)
+          break;
+        }
+        this._handleMovement(movementTransform, false)
         break;
       case 40: // Down
       case 83:
-        if(y + 1 > level.length - 1) break;
-        transformationFunction = (x, y) => {
-          return {x: x, y: y + 1}
-        }
-        if(playerCoordFromCamera.y === 6 && cameraCoord.y + 8 < level.length - 1){
-          this._handleMovement(transformationFunction, true)
+        movementTransform = {x: 0, y: 1}
+        if(y + 1 > level.length - 1){
+          this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        this._handleMovement(transformationFunction, false)
+        if(playerCoordFromCamera.y === 6 && cameraCoord.y + 8 < level.length - 1){
+          this._handleMovement(movementTransform, true)
+          break;
+        }
+        this._handleMovement(movementTransform, false)
         break;
       default:
     }
   }
-  _handleMovement(transformationFunction, moveCamera = false){
+  _handleMovement(movementTransform, moveCamera = false){
     const { x, y } = this.state.playerCoord.current;
-    const playerNextLocation = transformationFunction(x, y);
+    const playerNextLocation = {x: x + movementTransform.x, y: y + movementTransform.y};
 
     if(this.mapRefsCameraSpace[playerNextLocation.y - this.state.cameraCoord.y][playerNextLocation.x - this.state.cameraCoord.x].isSolid()){
+      this.setState({
+        playerCoord: {...this.state.playerCoord, facing: movementTransform}
+      })
       return;
     }
 
     let camera = {...this.state.cameraCoord};
     if(moveCamera){
-      camera = transformationFunction(this.state.cameraCoord.x, this.state.cameraCoord.y)
+      camera = {x: this.state.cameraCoord.x + movementTransform.x, y: this.state.cameraCoord.y + movementTransform.y};
     }
     this.setState({
-      playerCoord: {current: playerNextLocation, tail: {x, y}},
+      playerCoord: {current: playerNextLocation, tail: {x, y}, facing: movementTransform},
       cameraCoord: camera
     })
   }
