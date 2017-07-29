@@ -9,8 +9,9 @@ class PlayArea extends Component {
     this.state = {
       playerCoord: {current: {x: 7, y: 7}, tail: {x: 8, y: 7}},
       cameraCoord: {x: 3, y: 3}, // top left most box
-      currentMap: null // will hold from level json
+      currentMap: null, // will hold from level json
     }
+    this.mapRefsCameraSpace = Array(9).fill(Array(16).fill(null));
   }
   componentWillMount(){
     this.setState({currentMap: level});
@@ -21,6 +22,7 @@ class PlayArea extends Component {
     const playerCoordFromCamera = {x: x - cameraCoord.x, y: y - cameraCoord.y};
 
     let transformationFunction;
+    // On move => check barrier => move player & camera
     switch(e.keyCode){
       case 37: // Left
       case 65:
@@ -75,17 +77,29 @@ class PlayArea extends Component {
   }
   _handleMovement(transformationFunction, moveCamera = false){
     const { x, y } = this.state.playerCoord.current;
+    const playerNextLocation = transformationFunction(x, y);
+
+    if(this.mapRefsCameraSpace[playerNextLocation.y - this.state.cameraCoord.y][playerNextLocation.x - this.state.cameraCoord.x].isSolid()){
+      return;
+    }
 
     let camera = {...this.state.cameraCoord};
     if(moveCamera){
       camera = transformationFunction(this.state.cameraCoord.x, this.state.cameraCoord.y)
     }
     this.setState({
-      playerCoord: {current: transformationFunction(x, y), tail: {x, y}},
+      playerCoord: {current: playerNextLocation, tail: {x, y}},
       cameraCoord: camera
     })
   }
+  saveRef(ref, x, y){
+    // I HATE JAVASCRIPT... Wasted me idk how long on this freakin bug :/ Mutations man....
+    const newArray = [...this.mapRefsCameraSpace[y]]
+    newArray[x] = ref;
+    this.mapRefsCameraSpace[y] = newArray
+  }
   render() {
+    // this.mapRefsCameraSpace = Array(9).fill(Array(16).fill(null));
     const { cameraCoord, currentMap, playerCoord } = this.state;
 
     const emptyMap = Array(9).fill(Array(16).fill(null))
@@ -96,7 +110,12 @@ class PlayArea extends Component {
         const coordToTakeFromMap = {x: x + cameraCoord.x, y: y + cameraCoord.y}
         if(!Number.isInteger(currentMap[coordToTakeFromMap.y][coordToTakeFromMap.x])) return null;
         const element = React.cloneElement(Blocks[currentMap[coordToTakeFromMap.y][coordToTakeFromMap.x]],
-          {style:
+          {
+            ref: (ref) => {
+              this.saveRef(ref, x, y)
+            },
+            where: {x: x, y:y},
+            style:
             {
               gridRow: `${y + 1}/${y + 2}`,
               gridColumn: `${x + 1}/${x + 2}`,
