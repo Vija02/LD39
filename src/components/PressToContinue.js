@@ -20,7 +20,7 @@ class PressToContinue extends Component {
   }
   render() {
     return(
-      <Animated.View style={{opacity: this.state.anim}}> Press to continue...</Animated.View>
+      <Animated.View style={{opacity: this.state.anim, fontSize: "0.6em"}}> Press to continue...</Animated.View>
     )
   }
 }

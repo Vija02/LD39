@@ -53,6 +53,10 @@ class Index extends Component {
     }
   }
   render() {
+    const dialogueText = DialogText[this.props.match.params.dialog][this.state.currentLine];
+    const match = dialogueText.match(/(.*:) (.+)/);
+    const dialogueTitle = match[1].replace(':', "")
+    const dialogueBody = match[2];
     // Omg so much absolutes, but no time to fix >.>
     return(
       <View style={{
@@ -87,21 +91,23 @@ class Index extends Component {
           left: "2vw",
           right: "2vw",
           bottom: "2vw",
-          backgroundColor: "#404040",
+          // backgroundColor: "#404040",
+          backgroundColor: "#b9ab84",
           borderRadius: "5",
           padding: 20,
           border: "0.1px solid rgba(255, 255, 255, 0.25)"
         }}>
+          <Text style={{color: "black", fontWeight: "bold", paddingBottom: "0.5em"}}>{dialogueTitle}</Text>
           {
             this.state.finished
             ?
-            <Text style={{color: "white"}}>
-              {DialogText[this.props.match.params.dialog][this.state.currentLine]}
+            <Text className="Typist">
+              {dialogueBody}
               <PressToContinue />
             </Text>
             :
-            <Typist style={{color: "white"}} cursor={{show: false}} onTypingDone={() => {this.onTypingDone()}}>
-              {DialogText[this.props.match.params.dialog][this.state.currentLine]}
+            <Typist cursor={{show: false}} onTypingDone={() => {this.onTypingDone()}}>
+              {dialogueBody}
             </Typist>
           }
         </View>

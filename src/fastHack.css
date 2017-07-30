@@ -1,5 +1,6 @@
 .Typist {
-  color: white
+  color: black;
+  font-size: 0.9em;
 }
 html {
     overflow: hidden ! important;
