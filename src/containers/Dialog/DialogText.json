@@ -27,7 +27,7 @@
     "???: Better look around to see what's here~"
   ],
   "d_die_1": [
-    "???: This doesn't look safe.... I could die.~",
+    "???: This doesn't look safe.... I could die anytime.~",
     "???: Better go back to larger areas.~"
   ],
   "d_firstMed": [
@@ -109,6 +109,9 @@
   ],
   "d_passTrap": [
     "???: Whew, not sure if he left the note there on purpose or not. I'm just thankful I saw it.~"
+  ],
+  "d_looksLikeTrap": [
+    "???: This looks like a trap that connects to place I fell down from.~"
   ],
   "d_ending": [": THE ENDDDDD~"]
 }

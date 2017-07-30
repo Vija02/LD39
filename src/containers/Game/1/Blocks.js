@@ -45,4 +45,5 @@ export default {
       />,
   23: <EventBackground src={[moss]} cb={EventList.stepOnPlotTrap} />,
   24: <EventBackground src={[moss]} cb={EventList.passTrap} />,
+  25: <EventBackground src={[bloody_moss]} cb={EventList.looksLikeTrap} />,
 }

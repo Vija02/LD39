@@ -30,6 +30,10 @@ export const passTrap = (history) => {
   dialogCall(history, '/game/1/play/d_passTrap', "passTrap")
 }
 
+export const looksLikeTrap = (history) => {
+  dialogCall(history, '/game/1/play/d_looksLikeTrap', "looksLikeTrap")
+}
+
 export const readTrap = (history) => {
   setEvent("readTrap");
 }
