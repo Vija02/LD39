@@ -84,5 +84,5 @@ export default {
   34: <EventBackground src={[bloody_moss]} cb={EventList.pattern} />,
   35: <EventBackground src={[moss]} cb={EventList.prepare} />,
   36: <EventBackground src={[moss]} cb={EventList.lotsOfEffort} />,
-  37: <SingleDialogue src={[doorlock]} name="d_doorLock" solid />,
+  37: <SingleDialogue src={[moss, doorlock]} name="d_doorLock" solid />,
 }

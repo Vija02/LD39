@@ -50,7 +50,7 @@ class PasswordInput extends Component {
           <Text style={{color: "white"}}>Enter Password</Text>
           <p style={{color: "red", fontSize: "1em"}}>{this.state.status}</p>
           <form onSubmit={this.onSubmit.bind(this)}>
-            <input pattern="[a-zA-Z]*" style={{width: "100%"}} ref={(ref) => {this.input = ref}} value={this.state.password} onChange={(e) => {this.setState({password: e.target.value})}} />
+            <input style={{width: "100%"}} ref={(ref) => {this.input = ref}} value={this.state.password} onChange={(e) => {this.setState({password: e.target.value})}} />
           </form>
           <br/>
           <button onClick={() => {this.setState({return: true});}}>Return</button>
