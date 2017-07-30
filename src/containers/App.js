@@ -8,7 +8,15 @@ import Game from './Game'
 import Dialog from './Dialog'
 import Dead from './Dead'
 
+import ambient from 'assets/ambient.mp3'
+
 class App extends Component {
+  componentDidMount(){
+    this.ambient = new Audio(ambient);
+    this.ambient.volume = 0.3
+    this.ambient.loop = true;
+    this.ambient.play();
+  }
   render() {
     return (
       <Provider store={this.props.store} >

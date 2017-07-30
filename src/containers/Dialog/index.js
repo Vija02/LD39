@@ -29,6 +29,9 @@ class Index extends Component {
     this.overlay.focus()
     this.audio.play();
   }
+  componentWillUnmount(){
+    this.audio.pause();
+  }
   // If keyboard or mouse
   onProgress(){
     if(!this.state.finished){

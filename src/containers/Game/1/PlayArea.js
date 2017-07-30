@@ -6,6 +6,7 @@ import { useEnergy } from 'actions/energy'
 import level from './level.json';
 
 import person from 'assets/person.png';
+import move from 'assets/move.wav'
 
 // Gosh, what a long file. I think i don't want to refactor this.... At least it's not spaghetti code -w-
 class PlayArea extends Component {
@@ -16,6 +17,8 @@ class PlayArea extends Component {
       cameraCoord: {x: 0, y: 8}, // top left most box
       currentMap: null, // will hold from level json
     }
+    this.moveAudio = new Audio(move);
+    this.moveAudio.volume = 0.2;
     this.mapRefsCameraSpace = Array(9).fill(Array(16).fill(null));
   }
   componentWillMount(){
@@ -115,6 +118,8 @@ class PlayArea extends Component {
     }
 
     useEnergy()
+
+    this.moveAudio.play();
 
     if(nextBlockRef.event){
       nextBlockRef.event(this.props.history);
