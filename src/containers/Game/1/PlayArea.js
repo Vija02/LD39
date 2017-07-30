@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Blocks from './Blocks';
 
+import { useEnergy } from 'actions/energy'
+
 import level from './level.json';
 
 import person from 'assets/person.png';
@@ -109,6 +111,8 @@ class PlayArea extends Component {
       })
       return;
     }
+
+    useEnergy()
 
     let camera = {...this.state.cameraCoord};
     if(moveCamera){
