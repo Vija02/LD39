@@ -4,6 +4,8 @@ import { Redirect, Route } from 'react-router-dom'
 
 import PlayArea from './PlayArea';
 
+import { rotateMovement } from 'actions/movement'
+
 import NameInput from 'components/NameInput'
 import EnergyMeter from 'components/EnergyMeter'
 import EnergyDarkener from 'components/EnergyDarkener'
@@ -12,6 +14,11 @@ class Index extends Component {
   constructor(props){
     super(props)
     this.state = {redirect: null}
+  }
+  componentDidMount(){
+    setInterval(() => {
+      rotateMovement(1, 6);
+    }, 500)
   }
   render() {
     return (
@@ -47,6 +54,9 @@ class Index extends Component {
           return <Redirect to="/game/1/play" />
         }} />
         <Route exact path="/game/1/play/d_passTrap/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_looksLikeTrap/done" render={() => {
           return <Redirect to="/game/1/play" />
         }} />
 

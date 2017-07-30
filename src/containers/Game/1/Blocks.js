@@ -7,6 +7,7 @@ import Bandage from 'components/Bandage'
 import SingleDialogue from 'components/SingleDialogue'
 import EventBackground from 'components/EventBackground'
 import ConditionalEvent from 'components/ConditionalEvent'
+import ConditionalMovement from 'components/ConditionalMovement'
 
 import moss from 'assets/moss.png'
 import bloody_moss from 'assets/bloody_moss.png'
@@ -46,4 +47,35 @@ export default {
   23: <EventBackground src={[moss]} cb={EventList.stepOnPlotTrap} />,
   24: <EventBackground src={[moss]} cb={EventList.passTrap} />,
   25: <EventBackground src={[bloody_moss]} cb={EventList.looksLikeTrap} />,
+  // Basically the same, just for timing
+  26: <ConditionalMovement
+        condition={EventList.movingTrapIsCurrent(1)}
+        element={[<Background src={[bloody_moss]} />, <Background src={[bloody_moss, trap]} />]}
+        cb={EventList.stepOnTrap}
+  />,
+  27: <ConditionalMovement
+        condition={EventList.movingTrapIsCurrent(2)}
+        element={[<Background src={[bloody_moss]} />, <Background src={[bloody_moss, trap]} />]}
+        cb={EventList.stepOnTrap}
+  />,
+  28: <ConditionalMovement
+        condition={EventList.movingTrapIsCurrent(3)}
+        element={[<Background src={[bloody_moss]} />, <Background src={[bloody_moss, trap]} />]}
+        cb={EventList.stepOnTrap}
+  />,
+  29: <ConditionalMovement
+        condition={EventList.movingTrapIsCurrent(4)}
+        element={[<Background src={[bloody_moss]} />, <Background src={[bloody_moss, trap]} />]}
+        cb={EventList.stepOnTrap}
+  />,
+  30: <ConditionalMovement
+        condition={EventList.movingTrapIsCurrent(5)}
+        element={[<Background src={[bloody_moss]} />, <Background src={[bloody_moss, trap]} />]}
+        cb={EventList.stepOnTrap}
+  />,
+  31: <ConditionalMovement
+        condition={EventList.movingTrapIsCurrent(6)}
+        element={[<Background src={[bloody_moss]} />, <Background src={[bloody_moss, trap]} />]}
+        cb={EventList.stepOnTrap}
+  />,
 }

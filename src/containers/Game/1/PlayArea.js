@@ -160,6 +160,7 @@ class PlayArea extends Component {
               this.saveRef(ref, x, y)
             },
             where: {onMap: coordToTakeFromMap},
+            player: this.state.playerCoord,
             style:
             {
               gridRow: `${y + 1}/${y + 2}`,

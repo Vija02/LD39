@@ -57,6 +57,14 @@ export const trapIsVisible = (history) => {
   return 1
 }
 
+export const movingTrapIsCurrent = (num) => (history) => {
+  const storeData = store.getState();
+  if(storeData.movement.step === num){
+    return 1
+  }
+  return 0;
+}
+
 function dialogCall(history, dialogUrl, name){
   const storeData = store.getState();
   if(!storeData.event[name]){
