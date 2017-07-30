@@ -27,8 +27,8 @@
     "???: Better look around to see what's here"
   ],
   "d_die_1": [
-    "???: This doesn't look safe.... I could just die.",
-    "???: Better to go back to large areas."
+    "???: This doesn't look safe.... I could die.",
+    "???: Better go back to large areas."
   ],
   "d_firstMed": [
     "???: What? A bandage in the middle of nowhere?",
@@ -40,7 +40,7 @@
     "???: I've used this before. There's no more bandage to use."
   ],
   "d_huge_cave": [
-    "???: What a huge cave... Do someone live here?"
+    "???: What a huge cave... Does someone live here?"
   ],
   "d_bones": [
     "???: Bones...."

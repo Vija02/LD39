@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { View, Text } from 'react-primitives'
 import Typist from 'react-typist';
-import RefreshRedirect from 'components/RefreshRedirect';
 
+import RefreshRedirect from 'components/RefreshRedirect';
 import PressToContinue from 'components/PressToContinue';
 
 import DialogText from './DialogText.json'
+
+import type from 'assets/type.wav';
 
 class Index extends Component {
   constructor(props){
@@ -16,12 +18,16 @@ class Index extends Component {
       redirect: null,
       currentLine: 0
     }
+    this.audio = new Audio(type);
+    this.audio.loop = true;
+    this.audio.volume = 0.35;
   }
   componentWillMount(){
     this.redirectAdd("0");
   }
   componentDidMount(){
     this.overlay.focus()
+    this.audio.play();
   }
   // If keyboard or mouse
   onProgress(){
@@ -31,12 +37,14 @@ class Index extends Component {
       if(DialogText[this.props.match.params.dialog].length - 1 === this.state.currentLine){
         this.redirectAdd('done')
       }else{
+        this.audio.play()
         this.setState({currentLine: this.state.currentLine + 1, finished: false})
         this.redirectAdd(this.state.currentLine + 1);
       }
     }
   }
   onTypingDone(){
+    this.audio.pause();
     this.setState({finished: true})
   }
   redirect(){
