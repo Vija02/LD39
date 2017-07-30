@@ -66,9 +66,10 @@ class Index extends Component {
   }
   render() {
     const dialogueText = DialogText[this.props.match.params.dialog][this.state.currentLine];
-    const match = dialogueText.match(/(.*:) (.+)/);
+    const match = dialogueText.match(/(.*:) (?:(.+?)~(?:--font:(.*))?)/);
     let dialogueTitle = match[1].replace(':', "")
     let dialogueBody = match[2];
+    let dialogueClassName = match[3] ? match[3] : "";
     if(this.props.name){
       dialogueTitle = dialogueTitle.replace(/\?\?\?/, this.props.name);
       dialogueBody = dialogueBody.replace(/\?\?\?/, this.props.name);
@@ -117,12 +118,12 @@ class Index extends Component {
           {
             this.state.finished
             ?
-            <Text className="Typist">
+            <Text className={`Typist ${dialogueClassName}`}>
               {dialogueBody}
               <PressToContinue />
             </Text>
             :
-            <Typist cursor={{show: false}} onTypingDone={() => {this.onTypingDone()}}>
+            <Typist className={`Typist ${dialogueClassName}`} cursor={{show: false}} onTypingDone={() => {this.onTypingDone()}}>
               {dialogueBody}
             </Typist>
           }

@@ -5,7 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Background from './Background'
 
 import { finishBandage } from 'actions/bandage'
-import { setEnergy } from 'actions/energy'
+import { setEnergy, addEnergy } from 'actions/energy'
 
 class Bandage extends Component {
   constructor(props){
@@ -13,8 +13,11 @@ class Bandage extends Component {
     this.isSolid = () => true
     this.interact = (history, x, y) => {
       const filteredState = this.props.bandage.bandages.filter((item) => item.location.x === x && item.location.y === y)
-      if(filteredState.length === 0){
+      if(filteredState.length === 0 && x === 13 && y === 9){ // Meh, no time
         history.push(`${history.location.pathname}/d_firstMed`);
+        return;
+      }else if(filteredState.length === 0){
+        history.push(`${history.location.pathname}/d_normalMed`);
         return;
       }
       history.push(`${history.location.pathname}/d_usedMed`);
@@ -26,6 +29,11 @@ class Bandage extends Component {
         <Route exact path="/game/1/play/d_firstMed/done" render={() => {
           finishBandage({location: this.props.where.onMap});
           setEnergy(150);
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_normalMed/done" render={() => {
+          finishBandage({location: this.props.where.onMap});
+          addEnergy(50);
           return <Redirect to="/game/1/play" />
         }} />
         <Route exact path="/game/1/play/d_usedMed/done" render={() => {

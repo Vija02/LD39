@@ -1,58 +1,71 @@
 {
   "d_opening": [
-    "???: Uhh........ Ger?",
-    "Ger: What?",
-    "???: To be honest, I really don't think we should be here...",
-    "Ger: I know. Isn't that obvious?",
-    "???: .......",
-    "Ger: Oh come on, don't be a scaredy cat.",
-    "Ger: Look! The moon is that way. Just a little more and we'll be out from the other side.",
-    "???: You sure about this?",
-    "Ger: If you don't trust me, that's fine.",
-    "???: .... Ok... I'll go first then.",
-    "Ger: Carefull!!",
-    "???: !!"
+    "???: Uhh........ Ger?~",
+    "Ger: What?~",
+    "???: To be honest, I really don't think we should be here...~",
+    "Ger: I know. Isn't that obvious?~",
+    "???: .......~",
+    "Ger: Oh come on, don't be a scaredy cat.~",
+    "Ger: Look! The moon is that way. Just a little more and we'll be out from the other side.~",
+    "???: You sure about this?~",
+    "Ger: If you don't trust me, that's fine.~",
+    "???: .... Ok... I'll go first then.~",
+    "Ger: Carefull!!~",
+    "???: !!~"
   ],
   "d_prologue": [
-    "???: Arghhh.",
-    "???: My leg... I can't stand.",
-    "???: Where the heck is this?",
-    "???: Who am I? I don't remember anything!",
-    "???: Ok, keep calm, I am..."
+    "???: Arghhh.~",
+    "???: My leg... I can't stand.~",
+    "???: Where the heck is this?~",
+    "???: Who am I? I don't remember anything!~",
+    "???: Ok, keep calm, I am...~"
   ],
   "d_name": [
-    "???: Oh right, I'm ???! How could I forget.",
-    "???: I remember walking with Ger along the mountain and...",
-    "???: I fell didn't I...",
-    "???: Better look around to see what's here"
+    "???: Oh right, I'm ???! How could I forget.~",
+    "???: I remember walking with Ger along the mountain and...~",
+    "???: I fell didn't I...~",
+    "???: Better look around to see what's here~"
   ],
   "d_die_1": [
-    "???: This doesn't look safe.... I could die.",
-    "???: Better go back to large areas."
+    "???: This doesn't look safe.... I could die.~",
+    "???: Better go back to larger areas.~"
   ],
   "d_firstMed": [
-    "???: What? A bandage in the middle of nowhere?",
-    "???: Well, that's convenient. Let me use it.",
-    ": You feel power slowly returning into your body",
-    "???: That should slow down the bleeding."
+    "???: What? A bandage in the middle of nowhere?~",
+    "???: Well, that's convenient. Let me use it.~",
+    ": You feel power slowly returning into your body~",
+    "???: That should slow down the bleeding.~"
   ],
   "d_usedMed": [
-    "???: I've used this before. There's no more bandage to use."
+    "???: I've used this before. There's no more bandage to use.~"
+  ],
+  "d_normalMed": [
+    "???: Oh, another bandage. This will keep me alive for a while.~"
   ],
   "d_huge_cave": [
-    "???: What a huge cave... Does someone live here?"
+    "???: What a huge cave... Does someone live here?~"
   ],
   "d_bones": [
-    "???: Bones...."
+    "???: Bones....~"
   ],
   "d_chest": [
-    "???: Looks like a chest. Too bad I don't have the key to open it."
+    "???: Looks like a chest. Too bad I don't have the key to open it.~"
   ],
   "d_note_1": [
-    "???: A diary? Let's see what it says.",
-    "6 April 1839: It's been nearly 2 months since I'm stuck down here. You know? I don't think it's that bad after all. All those lessons I recieved from that survival class is finally paying off.",
-    ": Lately, I've got a new hobby. You never know what 2 months of boredom can bring you. I spent 3 hou-",
-    "???: Looks like the page got torn off..."
+    "???: A diary? Let's see what it says.~",
+    "6 April 1839: It's been nearly 2 months since I'm stuck down here. You know? I don't think it's that bad after all. All those lessons I recieved from that survival class is finally paying off.~--font:DiaryFont",
+    ": Lately, I've got a new hobby. You never know what 2 months of boredom can bring you. I spent 3 hou-~--font:DiaryFont",
+    "???: Looks like the page got torn off...~"
   ],
-  "d_ending": ["THE ENDDDDD"]
+  "d_note_2": [
+    "9 April 1839: Haha, it's a success again. This marks the 3 time I've done this. Can't wait for tommorow for another one~--font:DiaryFont"
+  ],
+  "d_note_3": [
+    "21 March 1839: After a lot of failed experiment, I finally did it!~--font:DiaryFont"
+  ],
+  "d_omg": [
+    "???: !!~",
+    "???: What the heck happened here...~"
+  ],
+  "d_ending": [": THE ENDDDDD~"]
 }

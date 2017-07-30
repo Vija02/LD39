@@ -2,6 +2,10 @@
   color: black;
   font-size: 0.9em;
 }
+.DiaryFont {
+  font-family: 'Petit Formal Script', cursive;
+  font-weight: bold;
+}
 html {
     overflow: hidden ! important;
 }

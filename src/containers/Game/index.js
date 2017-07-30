@@ -3,6 +3,9 @@ import { Route } from 'react-router-dom'
 
 import RefreshRedirect from 'components/RefreshRedirect'
 
+import fall from 'assets/fall.wav';
+import ambient from 'assets/ambient.mp3'
+
 import Stage1 from './1'
 
 class Index extends Component {
@@ -12,8 +15,19 @@ class Index extends Component {
   }
   componentWillMount(){
     if(this.props.match.isExact){
+      const audio = new Audio(fall);
+      audio.volume = 0.3;
+      audio.play();
+      const ambientSong = new Audio(ambient);
+      ambientSong.volume = 0.3
+      ambientSong.loop = true;
+      ambientSong.play();
+
       setTimeout(() => {this.setState({redirect: "/game/1"})}, 3000)
     }
+  }
+  componentDidMount(){
+
   }
   render() {
     return (

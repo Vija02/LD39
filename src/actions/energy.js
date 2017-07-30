@@ -16,3 +16,12 @@ export function setEnergy(val) {
     }
   )
 }
+
+export function addEnergy(val) {
+  store.dispatch(
+    {
+      type: 'ADD_ENERGY',
+      energy: val
+    }
+  )
+}

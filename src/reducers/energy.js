@@ -4,6 +4,8 @@ module.exports = (state = {energy: 30}, action) => {
       return {...state, energy: state.energy - 1};
     case 'SET_ENERGY':
       return {...state, energy: action.energy};
+    case 'ADD_ENERGY':
+      return {...state, energy: state.energy + action.energy};
     default:
       return state;
   }

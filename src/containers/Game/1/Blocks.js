@@ -26,4 +26,8 @@ export default {
   9: <Background src={[moss, bonesss]} />,
   10: <EventBackground src={[moss]} cb={EventList.bones} />,
   11: <SingleDialogue src={[moss, note]} name="d_note_1" solid />,
+  12: <SingleDialogue src={[moss, note]} name="d_note_2" solid />,
+  13: <Background src={[bloody_moss, bonesss]} />,
+  14: <EventBackground src={[bloody_moss]} cb={EventList.omg} />,
+  15: <SingleDialogue src={[moss, note]} name="d_note_3" solid />,
 }

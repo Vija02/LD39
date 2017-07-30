@@ -56,7 +56,7 @@ class PlayArea extends Component {
           this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        if(playerCoordFromCamera.x === 3 && cameraCoord.x > 0){
+        if(playerCoordFromCamera.x === 4 && cameraCoord.x > 0){
           this._handleMovement(movementTransform, true)
           break;
         }
@@ -69,7 +69,7 @@ class PlayArea extends Component {
           this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        if(playerCoordFromCamera.x === 12 && cameraCoord.x + 15 < level[y].length - 1){
+        if(playerCoordFromCamera.x === 11 && cameraCoord.x + 15 < level[y].length - 1){
           this._handleMovement(movementTransform, true)
           break;
         }
@@ -82,7 +82,7 @@ class PlayArea extends Component {
           this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        if(playerCoordFromCamera.y === 2 && cameraCoord.y > 0){
+        if(playerCoordFromCamera.y === 3 && cameraCoord.y > 0){
           this._handleMovement(movementTransform, true)
           break;
         }
@@ -95,7 +95,7 @@ class PlayArea extends Component {
           this.setState({playerCoord: {...this.state.playerCoord, facing: movementTransform}});
           break;
         }
-        if(playerCoordFromCamera.y === 6 && cameraCoord.y + 8 < level.length - 1){
+        if(playerCoordFromCamera.y === 5 && cameraCoord.y + 8 < level.length - 1){
           this._handleMovement(movementTransform, true)
           break;
         }

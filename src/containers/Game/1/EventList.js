@@ -18,6 +18,10 @@ export const bones = (history) => {
   dialogCall(history, '/game/1/play/d_bones', "bones")
 }
 
+export const omg = (history) => {
+  dialogCall(history, '/game/1/play/d_omg', "omg")
+}
+
 function dialogCall(history, dialogUrl, name){
   const storeData = store.getState();
   if(!storeData.event[name]){
