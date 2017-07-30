@@ -3,6 +3,7 @@ import Blocks from './Blocks';
 
 import level from './level.json';
 
+// Gosh, what a long file. I think i don't want to refactor this.... At least it's not spaghetti code -w-
 class PlayArea extends Component {
   constructor(props){
     super(props)
@@ -14,11 +15,16 @@ class PlayArea extends Component {
     this.mapRefsCameraSpace = Array(9).fill(Array(16).fill(null));
   }
   componentWillMount(){
+    this.props.history.listen((location, action) => {
+      if(location.pathname.includes('/done')){
+        this.controllerDiv.focus()
+      }
+    })
     this.setState({currentMap: level});
   }
   onKeyDown(e){
     const { x, y } = this.state.playerCoord.current;
-    const { cameraCoord } = this.state;
+    const { cameraCoord, playerCoord } = this.state;
     const playerCoordFromCamera = {x: x - cameraCoord.x, y: y - cameraCoord.y};
 
     let movementTransform;
@@ -27,7 +33,10 @@ class PlayArea extends Component {
       case 13: // enter
       case 32: // space
       case 90: // z
-
+        const interactRef = this.mapRefsCameraSpace[y - this.state.cameraCoord.y + playerCoord.facing.y][x - this.state.cameraCoord.x + playerCoord.facing.x]
+        if(interactRef.interactable){
+          interactRef.interact(this.props.history);
+        }
         break;
       case 37: // Left
       case 65:
@@ -108,10 +117,13 @@ class PlayArea extends Component {
     // I HATE JAVASCRIPT... Wasted me idk how long on this freakin bug :/ Mutations man....
     const newArray = [...this.mapRefsCameraSpace[y]]
     newArray[x] = ref;
+    // handle redux
+    if(ref !== null && ref.getWrappedInstance !== null && ref.getWrappedInstance !== undefined){
+      newArray[x] = ref.getWrappedInstance();
+    }
     this.mapRefsCameraSpace[y] = newArray
   }
   render() {
-    // this.mapRefsCameraSpace = Array(9).fill(Array(16).fill(null));
     const { cameraCoord, currentMap, playerCoord } = this.state;
 
     const emptyMap = Array(9).fill(Array(16).fill(null))
@@ -126,7 +138,7 @@ class PlayArea extends Component {
             ref: (ref) => {
               this.saveRef(ref, x, y)
             },
-            where: {x: x, y:y},
+            where: {onMap: coordToTakeFromMap},
             style:
             {
               gridRow: `${y + 1}/${y + 2}`,
@@ -161,7 +173,7 @@ class PlayArea extends Component {
 
     return (
       <div style={{display: "grid", gridTemplateRows: "repeat(9, 6.25vw)", gridTemplateColumns: "repeat(16, 6.25vw)"}}>
-        <div id="ControllerManager" style={{gridRow: "1/10", gridColumn: "1/17", zIndex: "100"}} tabIndex="0" onKeyDown={this.onKeyDown.bind(this)}/>
+        <div id="ControllerManager" style={{gridRow: "1/10", gridColumn: "1/17", zIndex: "100"}} tabIndex="0" onKeyDown={this.onKeyDown.bind(this)} ref={(ref) => {this.controllerDiv = ref}} />
         {levelArea}
         {player}
         {tail}

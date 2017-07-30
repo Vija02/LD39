@@ -19,6 +19,9 @@ class Index extends Component {
   componentWillMount(){
     this.redirectAdd("0");
   }
+  componentDidMount(){
+    this.overlay.focus()
+  }
   // If keyboard or mouse
   onProgress(){
     if(!this.state.finished){
@@ -71,9 +74,10 @@ class Index extends Component {
           right: 0,
           bottom: 0,
         }}
+          ref={(ref) => {this.overlay = ref}}
           tabIndex="0"
           onClick={() => {this.onProgress()}}
-          onKeyDown={() => {this.onProgress()}}>
+          onKeyDown={(e) => {this.onProgress(); e.stopPropagation()}}>
         </View>
 
         {/* Dialog box */}

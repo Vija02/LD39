@@ -5,5 +5,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 import 'fastHack.css'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { configureStore } from './store';
+const store = configureStore();
+export { store }
+
+ReactDOM.render(<App store={store} />, document.getElementById('root'));
 registerServiceWorker();

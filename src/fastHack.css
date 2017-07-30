@@ -4,3 +4,7 @@
 html {
     overflow: hidden ! important;
 }
+
+* {
+  outline: 0
+}
