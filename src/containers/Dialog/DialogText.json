@@ -48,5 +48,11 @@
   "d_chest": [
     "???: Looks like a chest. Too bad I don't have the key to open it."
   ],
+  "d_note_1": [
+    "???: A diary? Let's see what it says.",
+    "6 April 1839: It's been nearly 2 months since I'm stuck down here. You know? I don't think it's that bad after all. All those lessons I recieved from that survival class is finally paying off.",
+    ": Lately, I've got a new hobby. You never know what 2 months of boredom can bring you. I spent 3 hou-",
+    "???: Looks like the page got torn off..."
+  ],
   "d_ending": ["THE ENDDDDD"]
 }

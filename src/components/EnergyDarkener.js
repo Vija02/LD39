@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { View } from 'react-primitives';
 import { Animated } from 'react-native-web';
 
 const maxEnergy = 150;
