@@ -13,7 +13,7 @@ class EnergyMeter extends Component {
   }
   componentWillUpdate(nextProps){
     // Why take the time to animate this? idk tbh -w-
-    Animated.spring(this.state.energy, {toValue: nextProps.energy}).start();
+    Animated.timing(this.state.energy, {toValue: nextProps.energy}).start();
   }
   render() {
     return(

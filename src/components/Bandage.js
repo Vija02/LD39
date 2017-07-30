@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import Background from './Background'
 
 import { finishBandage } from 'actions/bandage'
+import { setEnergy } from 'actions/energy'
 
 class Bandage extends Component {
   constructor(props){
@@ -25,6 +26,7 @@ class Bandage extends Component {
       <Switch>
         <Route exact path="/game/1/play/d_firstMed/done" render={() => {
           finishBandage({location: this.props.where.onMap});
+          setEnergy(150);
           return <Redirect to="/game/1/play" />
         }} />
         <Route exact path="/game/1/play/d_usedMed/done" render={() => {

@@ -7,3 +7,12 @@ export function useEnergy() {
     }
   )
 }
+
+export function setEnergy(val) {
+  store.dispatch(
+    {
+      type: 'SET_ENERGY',
+      energy: val
+    }
+  )
+}
