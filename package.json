@@ -2,6 +2,7 @@
   "name": "ldjam39",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://vija02.github.io/LD39",
   "dependencies": {
     "animated": "^0.2.0",
     "react": "^15.6.1",
@@ -17,6 +18,8 @@
     "react-scripts": "1.0.10"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
