@@ -10,7 +10,7 @@ class NameInput extends Component {
     this.state = {
       name: "",
       done: false,
-      preventedFast: false
+      preventedFast: 0
     }
   }
   componentDidMount(){
@@ -20,11 +20,11 @@ class NameInput extends Component {
     e.preventDefault();
     let name = this.state.name;
     if(this.state.name === ""){
-      if(!this.state.preventedFast){
-        this.setState({preventedFast: true});
+      if(this.state.preventedFast < 2){
+        this.setState({preventedFast: this.state.preventedFast + 1});
         return;
       }
-      name = "LD Player #42"
+      name = "LD#39 Player"
     }
     setName(name);
     this.setState({done: true})

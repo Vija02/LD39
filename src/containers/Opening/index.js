@@ -3,6 +3,7 @@ import { View } from 'react-primitives'
 import { Redirect, Route } from 'react-router-dom'
 
 import tree from 'assets/tree.png'
+import moon from 'assets/moon.png'
 import stickman0 from 'assets/stickman0.png'
 import stickman1 from 'assets/stickman1.png'
 import stickman2 from 'assets/stickman2.png'
@@ -29,6 +30,7 @@ class Index extends Component {
           return <Redirect to="/game" />
         }} />
 
+        <img src={moon} alt="" style={{gridRow: "2/4", gridColumn: "15/17", width: "100%"}}/>
         <img src={tree} alt="" style={{gridRow: "1/7", gridColumn: "6/14", width: "100%"}}/>
         <img src={tree} alt="" style={{gridRow: "2/7", gridColumn: "2/6", width: "100%"}}/>
         <div style={{gridRow: "7/10", gridColumn: "1/15", backgroundColor: "rgb(14, 5, 1)"}}></div>
