@@ -16,6 +16,7 @@ import chest from 'assets/chest.png'
 import bonesss from 'assets/bonesss.png'
 import note from 'assets/note.png'
 import trap from 'assets/trap.png'
+import doorlock from 'assets/doorlock.png'
 
 export default {
   1: <Background color="black" solid />,
@@ -83,4 +84,5 @@ export default {
   34: <EventBackground src={[bloody_moss]} cb={EventList.pattern} />,
   35: <EventBackground src={[moss]} cb={EventList.prepare} />,
   36: <EventBackground src={[moss]} cb={EventList.lotsOfEffort} />,
+  37: <SingleDialogue src={[doorlock]} name="d_doorLock" solid />,
 }

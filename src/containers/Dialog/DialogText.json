@@ -125,5 +125,8 @@
   "d_lotsOfEffort": [
     "???: Wow... He sure used a lot of effort to make this. I think this is the end of the traps.~"
   ],
+  "d_doorLock": [
+    "???: Looks like I need a password to unlock this door.~"
+  ],
   "d_ending": [": THE ENDDDDD~"]
 }

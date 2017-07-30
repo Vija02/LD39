@@ -7,6 +7,7 @@ import PlayArea from './PlayArea';
 import { rotateMovement } from 'actions/movement'
 
 import NameInput from 'components/NameInput'
+import PasswordInput from 'components/PasswordInput'
 import EnergyMeter from 'components/EnergyMeter'
 import EnergyDarkener from 'components/EnergyDarkener'
 
@@ -72,6 +73,7 @@ class Index extends Component {
           return <Redirect to="/game/1/play" />
         }} />
 
+        <Route path="/game/1/play/d_doorLock/0" component={PasswordInput} />
 
         <EnergyDarkener energy={this.props.energy} />
         <EnergyMeter energy={this.props.energy} />
