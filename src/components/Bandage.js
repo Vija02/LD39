@@ -11,9 +11,13 @@ class Bandage extends Component {
     super(props)
     this.isSolid = () => true
     this.interactable = () => true
-    this.interact = (history) => {
-      console.log("INTERACT WITH BANDAGE");
-      history.push(`${history.location.pathname}/d_firstMed`);
+    this.interact = (history, x, y) => {
+      const filteredState = this.props.bandage.bandages.filter((item) => item.location.x === x && item.location.y === y)
+      if(filteredState.length === 0){
+        history.push(`${history.location.pathname}/d_firstMed`);
+        return;
+      }
+      history.push(`${history.location.pathname}/d_usedMed`);
     }
   }
   render(){
@@ -21,6 +25,9 @@ class Bandage extends Component {
       <Switch>
         <Route exact path="/game/1/play/d_firstMed/done" render={() => {
           finishBandage({location: this.props.where.onMap});
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_usedMed/done" render={() => {
           return <Redirect to="/game/1/play" />
         }} />
         <Background {...this.props} />

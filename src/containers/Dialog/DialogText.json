@@ -25,5 +25,8 @@
     "You feel power slowly coming into your body",
     "???: At least that stopped the bleeding for now."
   ],
+  "d_usedMed": [
+    "???: I've used this before. There's no more bandage to use."
+  ],
   "d_ending": ["THE ENDDDDD"]
 }

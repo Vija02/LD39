@@ -33,9 +33,10 @@ class PlayArea extends Component {
       case 13: // enter
       case 32: // space
       case 90: // z
-        const interactRef = this.mapRefsCameraSpace[y - this.state.cameraCoord.y + playerCoord.facing.y][x - this.state.cameraCoord.x + playerCoord.facing.x]
+        const interactObjectLocation = {x: x - this.state.cameraCoord.x + playerCoord.facing.x, y: y - this.state.cameraCoord.y + playerCoord.facing.y}
+        const interactRef = this.mapRefsCameraSpace[interactObjectLocation.y][interactObjectLocation.x]
         if(interactRef.interactable){
-          interactRef.interact(this.props.history);
+          interactRef.interact(this.props.history, x + playerCoord.facing.x, y + playerCoord.facing.y);
         }
         break;
       case 37: // Left

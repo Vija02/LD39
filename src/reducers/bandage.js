@@ -1,8 +1,8 @@
-module.export = (state = {bandages: []}, action) => {
+module.exports = (state = {bandages: []}, action) => {
   switch (action.type) {
     case 'SET_BANDAGE':
       const newArrayWithoutNewPosition = state.bandages.reduce((acc, cur) => {
-        if(cur.position.x === action.position.x && cur.position.y === action.position.y){
+        if(cur.location.x === action.state.location.x && cur.location.y === action.state.location.y){
           return acc
         }
         const lastArr = [...acc];
