@@ -8,7 +8,6 @@ class Chest extends Component {
   constructor(props){
     super(props)
     this.isSolid = () => true
-    this.interactable = () => true
     this.interact = (history, x, y) => {
       history.push(`${history.location.pathname}/d_chest`);
     }

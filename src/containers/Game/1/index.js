@@ -29,6 +29,12 @@ class Index extends Component {
         }} />
         <Route path="/game/1/play" component={PlayArea} />/
 
+
+        <Route exact path="/game/1/play/d_die_1/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+
+
         <EnergyMeter energy={this.props.energy} />
         {this.props.energy < 1 ? <Redirect to="/dead" />: null}
       </div>

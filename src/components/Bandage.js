@@ -11,7 +11,6 @@ class Bandage extends Component {
   constructor(props){
     super(props)
     this.isSolid = () => true
-    this.interactable = () => true
     this.interact = (history, x, y) => {
       const filteredState = this.props.bandage.bandages.filter((item) => item.location.x === x && item.location.y === y)
       if(filteredState.length === 0){

@@ -42,7 +42,7 @@ class PlayArea extends Component {
       case 90: // z
         const interactObjectLocation = {x: x - this.state.cameraCoord.x + playerCoord.facing.x, y: y - this.state.cameraCoord.y + playerCoord.facing.y}
         const interactRef = this.mapRefsCameraSpace[interactObjectLocation.y][interactObjectLocation.x]
-        if(interactRef.interactable){
+        if(interactRef.interact){
           interactRef.interact(this.props.history, x + playerCoord.facing.x, y + playerCoord.facing.y);
         }
         break;
@@ -105,7 +105,9 @@ class PlayArea extends Component {
     const { x, y } = this.state.playerCoord.current;
     const playerNextLocation = {x: x + movementTransform.x, y: y + movementTransform.y};
 
-    if(this.mapRefsCameraSpace[playerNextLocation.y - this.state.cameraCoord.y][playerNextLocation.x - this.state.cameraCoord.x].isSolid()){
+    const nextBlockRef = this.mapRefsCameraSpace[playerNextLocation.y - this.state.cameraCoord.y][playerNextLocation.x - this.state.cameraCoord.x]
+
+    if(nextBlockRef.isSolid()){
       this.setState({
         playerCoord: {...this.state.playerCoord, facing: movementTransform}
       })
@@ -113,6 +115,10 @@ class PlayArea extends Component {
     }
 
     useEnergy()
+
+    if(nextBlockRef.event){
+      nextBlockRef.event(this.props.history);
+    }
 
     let camera = {...this.state.cameraCoord};
     if(moveCamera){

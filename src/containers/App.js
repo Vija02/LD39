@@ -19,7 +19,7 @@ class App extends Component {
               <Route path="/game" component={Game} />
               <Route path="/" component={Opening} />
             </Switch>
-            <Route path="/:origin*/:dialog(d_[a-zA-Z]+)/:line?" component={Dialog} />
+            <Route path="/:origin*/:dialog(d_[a-zA-Z1-9_]+)/:line?" component={Dialog} />
           </View>
         </Router>
       </Provider>
