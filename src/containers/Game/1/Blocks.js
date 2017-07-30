@@ -6,6 +6,7 @@ import Background from 'components/Background'
 import Bandage from 'components/Bandage'
 import SingleDialogue from 'components/SingleDialogue'
 import EventBackground from 'components/EventBackground'
+import ConditionalEvent from 'components/ConditionalEvent'
 
 import moss from 'assets/moss.png'
 import bloody_moss from 'assets/bloody_moss.png'
@@ -13,6 +14,7 @@ import bandages from 'assets/bandages.png'
 import chest from 'assets/chest.png'
 import bonesss from 'assets/bonesss.png'
 import note from 'assets/note.png'
+import trap from 'assets/trap.png'
 
 export default {
   1: <Background color="black" solid />,
@@ -30,4 +32,17 @@ export default {
   13: <Background src={[bloody_moss, bonesss]} />,
   14: <EventBackground src={[bloody_moss]} cb={EventList.omg} />,
   15: <SingleDialogue src={[moss, note]} name="d_note_3" solid />,
+  16: <SingleDialogue src={[moss, note]} name="d_note_4" solid />,
+  17: <SingleDialogue src={[moss, note]} name="d_note_5" solid />,
+  18: <SingleDialogue src={[moss, note]} name="d_note_6" solid />,
+  19: <SingleDialogue src={[moss, note]} name="d_note_7" solid />,
+  20: <EventBackground src={[moss]} cb={EventList.unending} />,
+  21: <SingleDialogue src={[moss, note]} name="d_note_1_2" solid cb={EventList.readTrap} />,
+  22: <ConditionalEvent
+        condition={EventList.trapIsVisible}
+        element={[<Background src={[moss]} />, <Background src={[moss, trap]} />]}
+        cb={EventList.stepOnTrap}
+      />,
+  23: <EventBackground src={[moss]} cb={EventList.stepOnPlotTrap} />,
+  24: <EventBackground src={[moss]} cb={EventList.passTrap} />,
 }

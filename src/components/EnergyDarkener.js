@@ -25,7 +25,7 @@ class EnergyDarkener extends Component {
         backgroundColor: "#4e0000",
         opacity: this.state.energy.interpolate({
           inputRange: [0, maxEnergy],
-          outputRange: ["0.5", "0"],
+          outputRange: [0.5, 0],
         })
       }} />
     )

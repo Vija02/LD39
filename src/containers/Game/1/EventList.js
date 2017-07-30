@@ -22,6 +22,37 @@ export const omg = (history) => {
   dialogCall(history, '/game/1/play/d_omg', "omg")
 }
 
+export const unending = (history) => {
+  dialogCall(history, '/game/1/play/d_unending', "unending")
+}
+
+export const passTrap = (history) => {
+  dialogCall(history, '/game/1/play/d_passTrap', "passTrap")
+}
+
+export const readTrap = (history) => {
+  setEvent("readTrap");
+}
+
+export const stepOnTrap = (history) => {
+  history.push('/dead')
+}
+
+export const stepOnPlotTrap = (history) => {
+  const storeData = store.getState();
+  if(!storeData.event.readTrap){
+    history.push('/dead')
+  }
+}
+
+export const trapIsVisible = (history) => {
+  const storeData = store.getState();
+  if(!storeData.event.readTrap){
+    return 0;
+  }
+  return 1
+}
+
 function dialogCall(history, dialogUrl, name){
   const storeData = store.getState();
   if(!storeData.event[name]){

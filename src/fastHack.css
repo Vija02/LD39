@@ -6,6 +6,9 @@
   font-family: 'Petit Formal Script', cursive;
   font-weight: bold;
 }
+.emphasisFont {
+  font-weight: bolder;
+}
 html {
     overflow: hidden ! important;
 }

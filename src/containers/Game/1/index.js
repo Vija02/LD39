@@ -40,6 +40,15 @@ class Index extends Component {
         <Route exact path="/game/1/play/d_bones/done" render={() => {
           return <Redirect to="/game/1/play" />
         }} />
+        <Route exact path="/game/1/play/d_omg/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_unending/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_passTrap/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
 
 
         <EnergyDarkener energy={this.props.energy} />

@@ -14,7 +14,10 @@ class SingleDialogue extends Component {
   render(){
     return (
       <Switch>
-        <Route exact path={`/:stuff*/${this.props.name}/done`} render={({match}) => {
+        <Route exact path={`/:stuff*/${this.props.name}/done`} render={({history, match}) => {
+          if(this.props.cb){
+            this.props.cb(history);
+          }
           return <Redirect to={`/${match.params.stuff}`} />
         }} />
         <Background {...this.props} />
