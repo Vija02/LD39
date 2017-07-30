@@ -6,6 +6,7 @@ import PlayArea from './PlayArea';
 
 import NameInput from 'components/NameInput'
 import EnergyMeter from 'components/EnergyMeter'
+import EnergyDarkener from 'components/EnergyDarkener'
 
 class Index extends Component {
   constructor(props){
@@ -33,8 +34,15 @@ class Index extends Component {
         <Route exact path="/game/1/play/d_die_1/done" render={() => {
           return <Redirect to="/game/1/play" />
         }} />
+        <Route exact path="/game/1/play/d_huge_cave/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_bones/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
 
 
+        <EnergyDarkener energy={this.props.energy} />
         <EnergyMeter energy={this.props.energy} />
         {this.props.energy < 1 ? <Redirect to="/dead" />: null}
       </div>

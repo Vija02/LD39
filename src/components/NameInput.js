@@ -9,7 +9,8 @@ class NameInput extends Component {
     super(props);
     this.state = {
       name: "",
-      done: false
+      done: false,
+      preventedFast: false
     }
   }
   componentDidMount(){
@@ -19,6 +20,10 @@ class NameInput extends Component {
     e.preventDefault();
     let name = this.state.name;
     if(this.state.name === ""){
+      if(!this.state.preventedFast){
+        this.setState({preventedFast: true});
+        return;
+      }
       name = "LD Player #42"
     }
     setName(name);

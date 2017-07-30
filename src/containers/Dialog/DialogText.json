@@ -39,6 +39,12 @@
   "d_usedMed": [
     "???: I've used this before. There's no more bandage to use."
   ],
+  "d_huge_cave": [
+    "???: What a huge cave... Do someone live here?"
+  ],
+  "d_bones": [
+    "???: Bones...."
+  ],
   "d_chest": [
     "???: Looks like a chest. Too bad I don't have the key to open it."
   ],
