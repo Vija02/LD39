@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { View, Text } from 'react-primitives'
 import Typist from 'react-typist';
 import RefreshRedirect from 'components/RefreshRedirect';
@@ -55,8 +56,12 @@ class Index extends Component {
   render() {
     const dialogueText = DialogText[this.props.match.params.dialog][this.state.currentLine];
     const match = dialogueText.match(/(.*:) (.+)/);
-    const dialogueTitle = match[1].replace(':', "")
-    const dialogueBody = match[2];
+    let dialogueTitle = match[1].replace(':', "")
+    let dialogueBody = match[2];
+    if(this.props.name){
+      dialogueTitle = dialogueTitle.replace(/\?\?\?/, this.props.name);
+      dialogueBody = dialogueBody.replace(/\?\?\?/, this.props.name);
+    }
     // Omg so much absolutes, but no time to fix >.>
     return(
       <View style={{
@@ -72,7 +77,7 @@ class Index extends Component {
         {/* Overlay */}
         <View style={{
           position: "absolute",
-          zIndex: 1000000, // xd
+          zIndex: 10000, // xd
           top: 0,
           left: 0,
           right: 0,
@@ -116,4 +121,10 @@ class Index extends Component {
   }
 }
 
-export default Index;
+const mapStateToProps = (state) => {
+  return {
+    name: state.name.name,
+  };
+};
+
+export default connect(mapStateToProps, null, null, { withRef: true })(Index);

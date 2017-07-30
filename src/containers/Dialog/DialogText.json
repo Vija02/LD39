@@ -18,7 +18,10 @@
     "???: My leg...",
     "???: Where the heck is this?",
     "???: Who am I? I don't remember anything!",
-    "???: Ok, keep calm, I am...",
+    "???: Ok, keep calm, I am..."
+  ],
+  "d_name": [
+    "???: Oh right, I'm ???! How could I forget.",
     "???: I remember walking with Ger along the mountain and...",
     "???: I fell didn't I...",
     "???: Better look around to see what's here"
@@ -31,6 +34,9 @@
   ],
   "d_usedMed": [
     "???: I've used this before. There's no more bandage to use."
+  ],
+  "d_chest": [
+    "???: Looks like a chest. Too bad I don't have the key to open it."
   ],
   "d_ending": ["THE ENDDDDD"]
 }

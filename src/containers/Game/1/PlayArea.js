@@ -24,6 +24,9 @@ class PlayArea extends Component {
     })
     this.setState({currentMap: level});
   }
+  componentDidMount(){
+    this.controllerDiv.focus()
+  }
   onKeyDown(e){
     const { x, y } = this.state.playerCoord.current;
     const { cameraCoord, playerCoord } = this.state;
