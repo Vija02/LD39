@@ -3,6 +3,8 @@ import Blocks from './Blocks';
 
 import level from './level.json';
 
+import person from 'assets/person.png';
+
 // Gosh, what a long file. I think i don't want to refactor this.... At least it's not spaghetti code -w-
 class PlayArea extends Component {
   constructor(props){
@@ -153,10 +155,15 @@ class PlayArea extends Component {
     })
 
     const playerCoordOnMap = {x: playerCoord.current.x - cameraCoord.x, y: playerCoord.current.y - cameraCoord.y}
+    const rotation = Math.atan2(playerCoord.facing.x, -1 * playerCoord.facing.y)* (180 / Math.PI)
     const player =
-    <div id="player"
+    <img id="player" alt=""
+      src={person}
       style={{
-        backgroundColor: "yellow",
+        width: "100%",
+        transform: `rotate(${rotation}deg)`,
+        transformOrigin: "center 25%",
+        // backgroundColor: "yellow",
         gridRow: `${playerCoordOnMap.y + 1}/${playerCoordOnMap.y + 2}`,
         gridColumn: `${playerCoordOnMap.x + 1}/${playerCoordOnMap.x + 2}`
       }}
@@ -166,7 +173,7 @@ class PlayArea extends Component {
     const tail =
     <div id="player"
       style={{
-        backgroundColor: "blue",
+        // backgroundColor: "blue",
         gridRow: `${tailCoordOnMap.y + 1}/${tailCoordOnMap.y + 2}`,
         gridColumn: `${tailCoordOnMap.x + 1}/${tailCoordOnMap.x + 2}`
       }}

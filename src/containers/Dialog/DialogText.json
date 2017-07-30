@@ -16,14 +16,18 @@
   "d_prologue": [
     "???: Arghhh.",
     "???: My leg...",
-    "???: Where the heck is this...",
-    "???: I remember "
+    "???: Where the heck is this?",
+    "???: Who am I? I don't remember anything!",
+    "???: Ok, keep calm, I am...",
+    "???: I remember walking with Ger along the mountain and...",
+    "???: I fell didn't I...",
+    "???: Better look around to see what's here"
   ],
   "d_firstMed": [
     "???: What? A bandage in the middle of nowhere?",
     "???: Well, that's convenient. Let me use it.",
-    ": You feel power slowly coming into your body",
-    "???: At least that stopped the bleeding for now."
+    ": You feel power slowly returning into your body",
+    "???: That will stop the bleeding for now."
   ],
   "d_usedMed": [
     "???: I've used this before. There's no more bandage to use."
