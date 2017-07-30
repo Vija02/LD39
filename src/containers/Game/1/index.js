@@ -18,7 +18,7 @@ class Index extends Component {
   componentDidMount(){
     setInterval(() => {
       rotateMovement(1, 6);
-    }, 500)
+    }, 900)
   }
   render() {
     return (
@@ -37,7 +37,7 @@ class Index extends Component {
         }} />
         <Route path="/game/1/play" component={PlayArea} />/
 
-
+        {/* Should probably map this... */}
         <Route exact path="/game/1/play/d_die_1/done" render={() => {
           return <Redirect to="/game/1/play" />
         }} />
@@ -57,6 +57,18 @@ class Index extends Component {
           return <Redirect to="/game/1/play" />
         }} />
         <Route exact path="/game/1/play/d_looksLikeTrap/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_needCareful/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_pattern/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_prepare/done" render={() => {
+          return <Redirect to="/game/1/play" />
+        }} />
+        <Route exact path="/game/1/play/d_lotsOfEffort/done" render={() => {
           return <Redirect to="/game/1/play" />
         }} />
 

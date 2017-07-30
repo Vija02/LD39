@@ -34,6 +34,22 @@ export const looksLikeTrap = (history) => {
   dialogCall(history, '/game/1/play/d_looksLikeTrap', "looksLikeTrap")
 }
 
+export const needCareful = (history) => {
+  dialogCall(history, '/game/1/play/d_needCareful', "needCareful")
+}
+
+export const pattern = (history) => {
+  dialogCall(history, '/game/1/play/d_pattern', "pattern")
+}
+
+export const prepare = (history) => {
+  dialogCall(history, '/game/1/play/d_prepare', "prepare")
+}
+
+export const lotsOfEffort = (history) => {
+  dialogCall(history, '/game/1/play/d_lotsOfEffort', "lotsOfEffort")
+}
+
 export const readTrap = (history) => {
   setEvent("readTrap");
 }

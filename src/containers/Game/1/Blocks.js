@@ -78,4 +78,9 @@ export default {
         element={[<Background src={[bloody_moss]} />, <Background src={[bloody_moss, trap]} />]}
         cb={EventList.stepOnTrap}
   />,
+  32: <EventBackground src={[bloody_moss, trap]} cb={EventList.stepOnTrap} />,
+  33: <EventBackground src={[bloody_moss]} cb={EventList.needCareful} />,
+  34: <EventBackground src={[bloody_moss]} cb={EventList.pattern} />,
+  35: <EventBackground src={[moss]} cb={EventList.prepare} />,
+  36: <EventBackground src={[moss]} cb={EventList.lotsOfEffort} />,
 }

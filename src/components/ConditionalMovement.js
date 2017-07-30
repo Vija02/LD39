@@ -17,6 +17,10 @@ class ConditionalMovement extends Component {
     if(this.props.condition() === 1 && this.props.where.onMap.x === this.props.player.current.x && this.props.where.onMap.y === this.props.player.current.y){
       // Maybe next time can abstract this
       return <Redirect to="/dead" />
+      // Handle the legs
+    }else if(this.props.condition() === 1 && this.props.where.onMap.x === this.props.player.tail.x && this.props.where.onMap.y === this.props.player.tail.y){
+      // Maybe next time can abstract this
+      return <Redirect to="/dead" />
     }
     const num = this.props.condition()
     return React.cloneElement(this.props.element[num], {

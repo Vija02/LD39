@@ -13,8 +13,8 @@ class PlayArea extends Component {
   constructor(props){
     super(props)
     this.state = {
-      playerCoord: {current: {x: 2, y: 11}, tail: {x: 2, y: 12}, facing: {x: 0, y: -1}},
-      cameraCoord: {x: 0, y: 8}, // top left most box
+      playerCoord: {current: {x: 35, y: 34}, tail: {x: 36, y: 34}, facing: {x: 1, y: 0}},
+      cameraCoord: {x: 30, y: 30}, // top left most box
       currentMap: null, // will hold from level json
     }
     this.moveAudio = new Audio(move);

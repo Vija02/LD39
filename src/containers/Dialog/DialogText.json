@@ -113,5 +113,17 @@
   "d_looksLikeTrap": [
     "???: This looks like a trap that connects to place I fell down from.~"
   ],
+  "d_pattern": [
+    "???: Looks like the traps are following a pattern.~"
+  ],
+  "d_needCareful": [
+    "???: I need to be careful. 1 wrong step and that's it.~"
+  ],
+  "d_prepare": [
+    "???: This looks dangerous. I need to make sure I'm prepare before going past this. My legs will be a burden.~"
+  ],
+  "d_lotsOfEffort": [
+    "???: Wow... He sure used a lot of effort to make this. I think this is the end of the traps.~"
+  ],
   "d_ending": [": THE ENDDDDD~"]
 }
