@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux'
 import { View } from 'react-primitives';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { MemoryRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Opening from './Opening'
 import Game from './Game'

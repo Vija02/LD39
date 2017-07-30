@@ -15,12 +15,10 @@ class PasswordInput extends Component {
     this.input.focus();
   }
   onSubmit(e){
-    console.log("submit");
     e.preventDefault();
     let password = this.state.password;
     if(password === "") return;
-    if(/freedom/i.exec(password)){
-      console.log("WIN");
+    if(/fr[e3]+dom/i.exec(password)){
       this.setState({win: true})
     }else{
       this.setState({status: "Wrong Password!"})

@@ -1,16 +1,16 @@
 {
   "d_opening": [
-    "???: Uhh........ Ger?~",
-    "Ger: What?~",
+    "???: Uhh........ Vincent?~",
+    "Vincent: What?~",
     "???: To be honest, I really don't think we should be here...~",
-    "Ger: I know. Isn't that obvious?~",
+    "Vincent: I know. Isn't that obvious?~",
     "???: .......~",
-    "Ger: Oh come on, don't be a scaredy cat.~",
-    "Ger: Look! The moon is that way. Just a little more and we'll be out from the other side.~",
+    "Vincent: Oh come on, don't be a scaredy cat.~",
+    "Vincent: Look! The moon is that way. Just a little more and we'll be out from the other side.~",
     "???: You sure about this?~",
-    "Ger: If you don't trust me, that's fine.~",
+    "Vincent: If you don't trust me, that's fine.~",
     "???: .... Ok... I'll go first then.~",
-    "Ger: Carefull!!~",
+    "Vincent: Carefull!!~",
     "???: !!~"
   ],
   "d_prologue": [
@@ -22,7 +22,7 @@
   ],
   "d_name": [
     "???: Oh right, I'm ???! How could I forget.~",
-    "???: I remember walking with Ger along the mountain and...~",
+    "???: I remember walking with Vincent along the mountain and...~",
     "???: I fell didn't I...~",
     "???: Better look around to see what's here~"
   ],
@@ -98,7 +98,8 @@
     "???: What a story. Did he... suicide?~",
     "???: ......~",
     "???: Doesn't matter. My priority should be to get out of here as soon as possible.~",
-    "???: He said the password is the first letter of every diary he's ever written, combined together sorted by the date of writing.~--font:emphasisFont"
+    "???: He said the password is the first letter of every diary he's ever written, combined together sorted by the date of writing.~--font:emphasisFont",
+    "???: Great... that means I'll have to read all the diaries again... I'll probably die before that. Why is he making this so hard?~"
   ],
   "d_omg": [
     "???: !!~",
