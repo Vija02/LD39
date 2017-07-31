@@ -74,26 +74,18 @@ class Index extends Component {
       dialogueTitle = dialogueTitle.replace(/\?\?\?/, this.props.name);
       dialogueBody = dialogueBody.replace(/\?\?\?/, this.props.name);
     }
-    // Omg so much absolutes, but no time to fix >.>
     return(
-      <View style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0
+      <View style={{gridRow: "2/3", gridColumn: "2/3",
+        display: "grid", gridTemplateRows: "50fr 12fr 2.5fr", gridTemplateColumns: "1fr 43fr 1fr"
       }}>
         {
           this.state.redirect ? <RefreshRedirect to={this.state.redirect} /> : null
         }
         {/* Overlay */}
         <View style={{
-          position: "absolute",
+          gridRow: "1/4",
+          gridColumn: "1/4",
           zIndex: 10000, // xd
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
         }}
           ref={(ref) => {this.overlay = ref}}
           tabIndex="0"
@@ -103,12 +95,8 @@ class Index extends Component {
 
         {/* Dialog box */}
         <View style={{
-          position: "absolute",
-          top: "43.75vw",
-          left: "2vw",
-          right: "2vw",
-          bottom: "2vw",
-          // backgroundColor: "#404040",
+          gridRow: "2/3",
+          gridColumn: "2/3",
           backgroundColor: "#b9ab84",
           borderRadius: "5",
           padding: 20,

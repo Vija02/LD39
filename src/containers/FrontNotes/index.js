@@ -7,7 +7,7 @@ class Index extends Component {
       <View style={{
         display: "flex",
         height: "100%",
-        flex: "1 0",
+        flex: 1,
         alignItems: "center",
         backgroundColor: "black",
         color: "white"

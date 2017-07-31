@@ -12,7 +12,7 @@ import stickman3 from 'assets/stickman3.png'
 class Index extends Component {
   render() {
     return (
-      <View style={{display: "grid", gridTemplateRows: "repeat(9, 6.25vw)", gridTemplateColumns: "repeat(16, 6.25vw)"}}>
+      <View style={{display: "grid", height: "100%", gridTemplateRows: "repeat(9, 1fr)", gridTemplateColumns: "repeat(16, 1fr)"}}>
         <Redirect to="/d_opening" />
         <Route path="/d_opening/([0-5])" render={() => {
           return <img src={stickman0} alt="" style={{gridRow: "3/7", gridColumn: "6/13", zIndex: 50, width: "100%"}} />
