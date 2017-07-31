@@ -29,7 +29,7 @@ class Win extends Component {
             fontSize: "3em"
           }}>
             The End
-            <button onClick={() => {window.location.replace('/')}}>Replay?</button>
+            <button onClick={() => {window.location.replace('/LD39')}}>Replay?</button>
           </View>
         : null}
       </Animated.View>

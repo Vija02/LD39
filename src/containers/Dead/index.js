@@ -11,7 +11,7 @@ class Index extends Component {
         </View>
         <button style={{gridRow: "3/4", gridColumn: "2/3", height: "50%", width: "50%", alignSelf: "center", justifySelf: "center", fontSize: "2em"}}
           onClick={() => {
-            window.location.replace('/');
+            window.location.replace('/LD39');
           }}
         >Restart</button>
       </View>

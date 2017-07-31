@@ -21,6 +21,9 @@ class Index extends Component {
         <Text style={{paddingTop: 5, fontSize: "0.7em"}}>This game uses a relatively new feature in the browser. If things look off, you need to get another browser. Eg: Chrome 58+ or Firefox 52+</Text>
         <br />
         <button onClick={() => {this.props.history.push('/d_opening')}}>Start</button>
+
+        <Text style={{paddingTop: 5, fontSize: "0.7em"}}>Or</Text>
+        <button onClick={() => {this.props.history.push('/game')}}>Start after intro</button>
       </View>
     );
   }
