@@ -1,12 +1,26 @@
-# LD39 Game - [The Last](https://ldjam.com/events/ludum-dare/39/the-lost)
-A quick survival/exploration game around a cave that was accidentally discovered. And by accidentally, It means that you are hurt and losing power quickly!
+# The Last - A game made for the LD39 game jam
 
-Navigate around the cave to find anything that can help you survive!
+Link to submission: https://ldjam.com/events/ludum-dare/39/the-lost  
+Play now: https://vija02.github.io/LD39
 
-## Controls
+---
+
+## About the game
+
+![Game Screenshot](./docs/screenshot.png)
+
+This is a quick survival/exploration game about a cave that you have accidentally discovered. Hurt by the fall, you are quickly losing power and need immediate treatment. 
+
+Think fast and explore efficiently if you want to make it out alive!
+
+### Controls
 **Movement** : WASD/Arrow Keys  
 **Interact** : Enter/Space/Z/Mouse
 
-## General Info
-This game is made using React, bootstraped with create-react-app.
-Hosted with github, you can find it in the gh-pages branch of this repo. [Link](https://vija02.github.io/LD39) to the game for the lazy.
+---
+
+## Technical Details
+This game is made using **React**, bootstrapped with create-react-app.
+It is hosted with github, so you can find the HTML files in the `gh-pages` branch of this repo. 
+
+No game engine was used and everything was developed from scratch in the span of 48 hours. This project also demonstrates the power of CSS grid in its infancy.
